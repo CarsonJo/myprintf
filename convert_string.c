@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_adress.c                                   :+:      :+:    :+:   */
+/*   convert_string.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 11:13:52 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/09 12:32:15 by cjozefzo         ###   ########.fr       */
+/*   Created: 2023/05/09 10:29:17 by cjozefzo          #+#    #+#             */
+/*   Updated: 2023/05/09 15:14:12 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
-#include "../libft.h"
+#include "printf.h"
+#include "libft.h"
 
-void	print_adress(void *a)
+void	convert_string(va_list *list)
 {
-	return ;
-}
-void	convert_adress(va_list *list)
-{
-	void	*a;
+	char	*a;
 
-	a = va_arg(*list, void *);
-	print_adress(a);
+	a = va_arg(*list , char *);
+	while (*a)
+	{
+		ft_putchar_fd(*a, 1);
+		a++;
+	}
 }

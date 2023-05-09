@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_int.c                                      :+:      :+:    :+:   */
+/*   convert_adress.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 10:33:12 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/09 11:01:46 by cjozefzo         ###   ########.fr       */
+/*   Created: 2023/05/09 11:13:52 by cjozefzo          #+#    #+#             */
+/*   Updated: 2023/05/09 16:19:46 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
-#include "../libft.h"
+#include "printf.h"
+#include "libft.h"
 
-int	convert_int(va_list *list)
+void	print_adress(long int a)
 {
-	int		a;
-	char	*b;
+	static char	hex[16] = "0123456789abcdef";
+	static int i = 0;
 
-	a = va_arg(*list, int);
-	b = ft_itoa(a);
-	if (b == 0)
-		return (1);
-	a = 0;
-	while (b[a])
+	if (a > 15)
 	{
-		ft_putchar_fd(b[a], 1);
-		a++;
+		print_adress(a / 16);
+		i++;
 	}
-	free(b);
-	return (0);
+	ft_putchar_fd(hex[a % 16], 1);
+}
+void	convert_adress(va_list *list)
+{
+	long int	a;
+
+	a = va_arg(*list, long int);
+	ft_putchar_fd('0',1);
+	ft_putchar_fd('x',1);
+	print_adress(a);
 }

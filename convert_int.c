@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_hex_unsigned.c                             :+:      :+:    :+:   */
+/*   convert_int.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 11:44:15 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/09 12:28:48 by cjozefzo         ###   ########.fr       */
+/*   Created: 2023/05/09 10:33:12 by cjozefzo          #+#    #+#             */
+/*   Updated: 2023/05/09 13:52:52 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
-#include "../libft.h"
+#include "printf.h"
+#include "libft.h"
 
-void	tohex(unsigned int a)
+int	convert_int(va_list *list)
 {
-	static char	hex[16] = "0123456789abcdef";
+	int		a;
+	char	*b;
 
-	if (a > 16)
-		tohex(a / 16);
-	ft_putchar_fd(hex[a % 16], 1);
-}
-
-void	convert_hex_unsigned(va_list *list)
-{
-	unsigned int	a;
-	char			*first;
-
-	a = va_arg(*list, unsigned int);
-	tohex(a);
+	a = va_arg(*list, int);
+	b = ft_itoa(a);
+	if (b == 0)
+		return (1);
+	a = 0;
+	while (b[a])
+	{
+		ft_putchar_fd(b[a], 1);
+		a++;
+	}
+	free(b);
+	return (0);
 }

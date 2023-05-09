@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_string.c                                   :+:      :+:    :+:   */
+/*   convert_char.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 10:29:17 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/09 10:32:50 by cjozefzo         ###   ########.fr       */
+/*   Created: 2023/05/09 10:22:05 by cjozefzo          #+#    #+#             */
+/*   Updated: 2023/05/09 13:52:50 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
-#include "../libft.h"
+#include "printf.h"
+#include "libft.h"
 
-void	convert_string(va_list *list)
+void	convert_char(va_list *list)
 {
-	char	*a;
+	int	a;
 
-	a = va_arg(*list , char *);
-	while (a)
-	{
-		ft_putchar_fd(*a, 1);
-		a++;
-	}
+	a = (char)va_arg(*list, int);
+	ft_putchar_fd(a, 1);
 }

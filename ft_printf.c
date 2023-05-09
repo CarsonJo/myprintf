@@ -6,7 +6,7 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:27:57 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/08 18:59:00 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:22:40 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,20 @@ int	ft_printf(const char *all, ...)
 	}
 	return (0);
 }
+/*int main()
+{
+	int a = 2;
+	char b = 'a';
+	unsigned int c = 4000000000;
+	char *d = "blabla";
+	unsigned int e = 27;
+	ft_printf("bkoui\n");
+	ft_printf("%d,%c,%u,%s,%x,%X,%%\n",a,b,c,d,e,e);
+	ft_printf("%c\n",b);
+	ft_printf("%u\n",c);
+	ft_printf("%s\n",d);
+	ft_printf("%x\n",e);
+	ft_printf("%X\n",e);
+	ft_printf("%p\n",d);
+	ft_printf("%%");
+}*/
