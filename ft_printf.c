@@ -6,7 +6,7 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:27:57 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/10 11:12:10 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:51:31 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	ft_printf(const char *all, ...)
 	int		ret;
 
 	i = 0;
+	ret = 0;
 	while (all[i])
 	{
 		if (all[i] == '%')

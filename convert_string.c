@@ -6,7 +6,7 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:29:17 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/10 11:09:07 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:43:03 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ void	convert_string(va_list *list, int *ret)
 	char	*a;
 
 	a = va_arg(*list , char *);
+	if(a == 0)
+	{
+			write(1, "(null)", 6);
+			(*ret) += 6;
+			return ;
+	}
 	while (*a)
 	{
 		ft_putchar_fd(*a, 1);
