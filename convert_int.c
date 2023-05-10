@@ -6,14 +6,14 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:33:12 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/09 13:52:52 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/10 11:10:06 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-#include "libft.h"
+#include "ft_printf.h"
+#include "libft/libft.h"
 
-int	convert_int(va_list *list)
+int	convert_int(va_list *list, int *ret)
 {
 	int		a;
 	char	*b;
@@ -26,6 +26,7 @@ int	convert_int(va_list *list)
 	while (b[a])
 	{
 		ft_putchar_fd(b[a], 1);
+		(*ret)++;
 		a++;
 	}
 	free(b);

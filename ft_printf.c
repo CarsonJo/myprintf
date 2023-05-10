@@ -6,19 +6,20 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:27:57 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/09 16:22:40 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/10 11:12:10 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "printf.h"
-#include "libft.h"
+#include "ft_printf.h"
+#include "libft/libft.h"
 
 int	ft_printf(const char *all, ...)
 {
 	int		i;
 	va_list	list;
 	va_start(list, all);
+	int		ret;
 
 	i = 0;
 	while (all[i])
@@ -26,31 +27,19 @@ int	ft_printf(const char *all, ...)
 		if (all[i] == '%')
 		{
 			i++;
-			if(handle_variable(all, &list, &i))
-				return (1);
+			if(handle_variable(all, &list, &i, &ret))
+			{
+				va_end(list);
+				return (ret);
+			}
 		}
 		else
 		{
 			ft_putchar_fd(all[i], 1);
+			ret++;
 			i++;
 		}
 	}
-	return (0);
+	va_end(list);
+	return (ret);
 }
-/*int main()
-{
-	int a = 2;
-	char b = 'a';
-	unsigned int c = 4000000000;
-	char *d = "blabla";
-	unsigned int e = 27;
-	ft_printf("bkoui\n");
-	ft_printf("%d,%c,%u,%s,%x,%X,%%\n",a,b,c,d,e,e);
-	ft_printf("%c\n",b);
-	ft_printf("%u\n",c);
-	ft_printf("%s\n",d);
-	ft_printf("%x\n",e);
-	ft_printf("%X\n",e);
-	ft_printf("%p\n",d);
-	ft_printf("%%");
-}*/

@@ -3,35 +3,35 @@ SRC = ft_printf.c handle_variable.c convert_char.c convert_hex_unsigned.c conver
 
 OBJ = $(SRC:.c=.o)
 
-LIBSRC = libft/ft_putchar_fd.c libft/ft_itoa.c
-
-LIBOBJ = ft_putchar_fd.o ft_itoa.o
+CFLAGS = -Wall -Wextra -Werror
 
 LIB = libft.a
 
-CFLAGS = -Wall -Wextra -Werror
+PRINT = print.a
 
 NAME = libftprintf.a
 
-all : $(NAME) $(LIB)
+all : $(NAME)
 
-$(NAME) : $(OBJ)
-	ar -rc $(NAME) $(OBJ)
+$(NAME) : $(PRINT) $(LIB)
+	ar -rcT $(NAME) $(PRINT) libft/$(LIB)
+
+$(PRINT) : $(OBJ)
+	ar -rc $(PRINT) $(OBJ)
 
 $(OBJ) : $(SRC)
 	gcc -c $(SRC) $(CFLAGS)
 
-$(LIB) : $(LIBOBJ)
-	ar -rc $(LIB) $(LIBOBJ)
-
-$(LIBOBJ) : $(LIBSRC)
-	gcc -c $(LIBSRC) $(CFLAGS)
+$(LIB) :
+	make -C libft
 
 clean :
 	rm -f $(LIBOBJ) $(OBJ)
+	make -C libft clean
 
 fclean : clean
-	rm -f $(NAME) $(LIB)
+	rm -f $(NAME) $(PRINT)
+	make -C libft fclean
 
 re : fclean all
 
