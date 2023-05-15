@@ -6,23 +6,22 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:29:17 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/10 13:43:03 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/15 10:09:56 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 void	convert_string(va_list *list, int *ret)
 {
 	char	*a;
 
-	a = va_arg(*list , char *);
-	if(a == 0)
+	a = va_arg(*list, char *);
+	if (a == 0)
 	{
-			write(1, "(null)", 6);
-			(*ret) += 6;
-			return ;
+		write(1, "(null)", 6);
+		(*ret) += 6;
+		return ;
 	}
 	while (*a)
 	{

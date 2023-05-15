@@ -6,12 +6,11 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:33:12 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/10 11:10:06 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/15 10:09:29 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 int	convert_int(va_list *list, int *ret)
 {

@@ -6,12 +6,11 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:29:24 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/10 11:06:53 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/15 10:09:34 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 static void	tohex(unsigned int a, int *ret)
 {

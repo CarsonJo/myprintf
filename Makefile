@@ -5,25 +5,15 @@ OBJ = $(SRC:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
-LIB = libft.a
-
-PRINT = print.a
-
 NAME = libftprintf.a
 
 all : $(NAME)
 
-$(NAME) : $(PRINT) $(LIB)
-	ar -rcT $(NAME) $(PRINT) libft/$(LIB)
-
-$(PRINT) : $(OBJ)
-	ar -rc $(PRINT) $(OBJ)
+$(NAME) : $(OBJ)
+	ar -rc $(NAME) $(OBJ)
 
 $(OBJ) : $(SRC)
 	gcc -c $(SRC) $(CFLAGS)
-
-$(LIB) :
-	make -C libft
 
 clean :
 	rm -f $(LIBOBJ) $(OBJ)

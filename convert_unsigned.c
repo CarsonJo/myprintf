@@ -6,11 +6,10 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:57:58 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/10 11:51:37 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/15 10:10:08 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "ft_printf.h"
 
 int	convert_unsigned(va_list *list, int *ret)
@@ -26,7 +25,7 @@ int	convert_unsigned(va_list *list, int *ret)
 		first = ft_itoa(a / 10);
 		if (first == 0)
 			return (1);
-		while(first[i])
+		while (first[i])
 		{
 			ft_putchar_fd(first[i], 1);
 			(*ret)++;

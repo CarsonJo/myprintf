@@ -6,17 +6,16 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:13:52 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/10 11:39:03 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/15 10:08:15 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 void	print_adress(unsigned long int a, int *ret)
 {
 	static char	hex[16] = "0123456789abcdef";
-	static int i = 0;
+	static int	i = 0;
 
 	if (a > 15)
 	{
@@ -26,6 +25,7 @@ void	print_adress(unsigned long int a, int *ret)
 	ft_putchar_fd(hex[a % 16], 1);
 	(*ret)++;
 }
+
 void	convert_adress(va_list *list, int *ret)
 {
 	long int	a;
@@ -33,12 +33,12 @@ void	convert_adress(va_list *list, int *ret)
 	a = va_arg(*list, unsigned long int);
 	if (a == 0)
 	{
-		write(1,"(nil)",5);
+		write(1, "(nil)", 5);
 		*ret += 5;
 		return ;
 	}
-	ft_putchar_fd('0',1);
-	ft_putchar_fd('x',1);
+	ft_putchar_fd('0', 1);
+	ft_putchar_fd('x', 1);
 	*ret += 2 ;
 	print_adress(a, ret);
 }
