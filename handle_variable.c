@@ -6,7 +6,7 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 17:45:05 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/15 10:26:46 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:04:10 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,12 @@ int	handle_variable(const char *str, va_list *list, int a, int *ret)
 	{
 		ft_putchar_fd('%', 1);
 		(*ret)++;
+	}
+	else
+	{
+		ft_putchar_fd('%', 1);
+		ft_putchar_fd(str[a], 1);
+		(*ret) += 2;
 	}
 	return (err);
 }
