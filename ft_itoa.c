@@ -6,11 +6,11 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 08:56:15 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/08 15:15:54 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/15 12:15:03 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static void	initialise(int *size, long int *nb, long int n, int *i)
 {
