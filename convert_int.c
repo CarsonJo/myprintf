@@ -6,7 +6,7 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:33:12 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/15 10:09:29 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:57:32 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	convert_int(va_list *list, int *ret)
 	a = va_arg(*list, int);
 	b = ft_itoa(a);
 	if (b == 0)
-		return (1);
+		return (-1);
 	a = 0;
 	while (b[a])
 	{

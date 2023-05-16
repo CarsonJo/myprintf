@@ -6,7 +6,7 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:57:58 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/15 10:10:08 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:35:47 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	convert_unsigned(va_list *list, int *ret)
 	{
 		first = ft_itoa(a / 10);
 		if (first == 0)
-			return (1);
+			return (-1);
 		while (first[i])
 		{
 			ft_putchar_fd(first[i], 1);

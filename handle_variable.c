@@ -6,13 +6,13 @@
 /*   By: cjozefzo <cjozefzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 17:45:05 by cjozefzo          #+#    #+#             */
-/*   Updated: 2023/05/15 17:04:10 by cjozefzo         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:55:58 by cjozefzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	handle_variable(const char *str, va_list *list, int a, int *ret)
+int	choice(const char *str, va_list *list, int a, int *ret)
 {
 	int	err;
 
@@ -37,6 +37,18 @@ int	handle_variable(const char *str, va_list *list, int a, int *ret)
 		(*ret)++;
 	}
 	else
+		err = 1;
+	return (err);
+}
+
+int	handle_variable(const char *str, va_list *list, int a, int *ret)
+{
+	int	err;
+
+	err = choice(str, list, a, ret);
+	if (err == -1)
+		return (err);
+	else if (str[a] && err == 1)
 	{
 		ft_putchar_fd('%', 1);
 		ft_putchar_fd(str[a], 1);
