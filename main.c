@@ -103,6 +103,8 @@ int main()
 	printf(": %d\n",printf("%/vf"));
 	printf(": %d\n",ft_printf("%%%"));
 	printf(": %d\n\n",printf("%%%"));
+	printf(": %d\n",ft_printf("%[%"));
+	printf(": %d\n\n",printf("%[%"));
 
 	printf("csduixX%% :\n");
 	printf("%d\n",ft_printf("sortie1 :%c:%d:%s:%u:%i:%x:%X: retour :",100,100,"lache ta main",4294967295,-2147483648,175,175));
